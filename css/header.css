@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+header{
+    background:url(../imgs/banner.gif);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+header nav.bg-dark{
+    background: rgba(27,39,61,.95) !important;
+}
+header #time{
+    position: absolute;
+    top:50%;
+    left:0;
+    color:#fff;
+    display: flex;
+    width:100%;
+    padding:60px;
+}
+header #time .box{
+    width:calc(100% / 4);
+    text-align: center;
+    line-height: 60px;
+}
+header #time .box p:nth-child(1){
+    font-size: 150px;
+    font-weight: 900;
+}
+header nav ul li a{
+    color: #fff !important;
+    opacity: .8;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+}
+header nav ul li{
+    margin: 10px;
+}
+header nav ul li a:hover
+{
+    transform: scale(120%);
+    color: #00cec9 !important;
+    opacity: 1;
+}
+header .navbar{
+    padding:0 80px;
+
+}
+.btn-buy{
+    background: #e0e721;
+    margin-left: 20px;
+    color: #4a25aa;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    padding: 10px 30px;
+    outline: none;
+    border-radius: 5px;
+    transition: all .2s linear;
+}
+.btn-buy:hover{
+    border-radius: 20px;
+} 
+@media screen and (max-width: 800px) {
+    header #time .box p:nth-child(1){
+        font-size: 70px;
+    }
+    header #time{
+        padding:40px;
+    }
+  }
+@media screen and (max-width: 600px) {
+    header #time .box p:nth-child(1){
+        font-size: 60px;
+    }
+    header #time{
+        padding:30px;
+    }
+    header #time .box{
+        line-height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    header #time .box p:nth-child(1){
+        font-size: 30px;
+    }
+    header #time{
+        padding:35px;
+    }
+    header #time .box{
+        line-height: 10px;
+    }
+  }
+
+  header img{
+    height: 60px;
+    transition: 3.5s;
+    animation: span 1s linear infinite;
+  }
+
+  @keyframes span {
+    50%{
+        transform: scale(120%);
+    }
+    
+    100%{
+        transform: scale(100%);
+    }
+}
+  
+  

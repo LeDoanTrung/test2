@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        header ul{
+            display: flex;
+            list-style: none;
+        }
+
+        header nav{
+            background-color: #686de0;
+        }
+        #sidebar{
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 20%;
+            left: 0;
+        }
+       /* #sidebar.active{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+       } */
+        #sidebar .left{
+            top: 0;
+            width: 30%;
+            background: #0984e3;
+            transition: 1s;
+            transform: translateX(-100%);
+        }
+
+        #sidebar .right{
+            top: 0;
+            width: 70%;
+            background: #74b9ff;
+            transition: 1s;
+            transform: translateX(100%);
+        }
+
+        /* #sidebar.active .left{
+            animation: move1 .5s linear;
+        }
+        #sidebar.active .right{
+            animation: move2 .5s linear;
+        }
+        @keyframes move1{
+            0%{
+                transform: translateX(-50%);
+            }
+            100%{
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes move2{
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(0%);
+            }
+        } */
+        .left{
+            display: flex;
+            justify-content: flex-end;
+        }
+        #shut{
+            right: 0;
+            height: 25px;
+            display: none;
+        }
+        
+        @media  screen and (max-width: 600px) {
+         body {
+            background-color: lightblue;
+            }
+
+            #sidebar .left{
+                width: 100%;
+            }
+            #sidebar .right{
+                display: none;
+            }
+            #shut{
+            display: block;
+            }
+        }
+        header{
+            height: 100vh;
+        }
+        #vd1{
+            height: 100vh;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <button id="toggle"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <ul class="bar">
+                <li><a href="#vd1">Home</a></li>
+                <li><a href="#vd2">Home</a></li>
+                <li><a href="#vd3">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+
+        <section id="sidebar">
+            
+            <div class="left">
+                <button id="shut">X</button>
+            </div>
+            <div class="right">
+                right
+            </div>
+        </section>
+    </header>
+
+    <section id="vd1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste omnis recusandae, officia consequuntur nihil praesentium inventore distinctio reprehenderit laboriosam debitis dicta neque officiis et veritatis. Suscipit eveniet beatae at explicabo.
+    </section>
+    <script>    
+        let toggle = document.querySelector("#toggle");
+        let sidebar = document.querySelector("#sidebar");
+        let left=document.querySelector(".left");
+        let right = document.querySelector(".right");
+        let shut=document.querySelector("#shut");
+        toggle.addEventListener('click',()=>{
+            sidebar.classList.add("active");
+            left.style.transform="translateX(0%)";
+            right.style.transform="translateX(0%)";
+        })
+
+        right.addEventListener('click',()=>{
+            sidebar.classList.remove("active");
+            left.style.transform="translateX(-100%)";
+            right.style.transform="translateX(100%)";
+        })
+        shut.addEventListener('click',()=>{
+            sidebar.classList.remove("active");
+            left.style.transform="translateX(-100%)";
+            right.style.transform="translateX(100%)";
+        })
+
+
+    </script>
+</body>
+</html>
